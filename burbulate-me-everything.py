@@ -37,7 +37,7 @@ class Vector:
 
 def solve(
     grid_size: int,
-    target: list[float, float], # y, x
+    target: list[int, int], # y, x
     top_left: Vector,
     bottom_left: Vector,
     top_right: Vector,
@@ -63,6 +63,8 @@ def interactive() -> None:
         grid_size = int(grid_size[0])
         assert(grid_size > 0)
         target = [int(_) for _ in target]
+        assert(0 < target[0] < grid_size)
+        assert(0 < target[1] < grid_size)
         top_left = Vector(*top_left)
         bottom_left = Vector(*bottom_left)
         top_right = Vector(*top_right)
